@@ -58,7 +58,7 @@ In many real-world graphs — dynamic networks, protein interaction networks, pr
 
 FUSE optimizes a differentiable form of graph modularity:
 
-$$Q(S) = \frac{1}{2m} \operatorname{Tr}(S^\top B S), \quad B = A - \frac{dd^\top}{2m}$$
+$Q(S) = \frac{1}{2m} \operatorname{Tr}(S^\top B S), \quad B = A - \frac{dd^\top}{2m}$
 
 where $S \in \mathbb{R}^{n \times k}$ is the embedding matrix, $A$ is the adjacency matrix, $d$ is the degree vector, and $m = |E|$.
 
