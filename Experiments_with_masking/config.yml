@@ -1,0 +1,51 @@
+SEED: 46
+NJOBS: 5
+NREPS: 10
+EMBEDDING_HYPERPARAMETERS:
+  embedding_dim: 150
+  eta: 0.05
+  lambda_supervised: 1.0
+  lambda_semi: 2.0
+  iterations: 200
+  num_walks: 10
+  walk_length: 5
+  walk_length_labelled: 3
+  initialization: random
+  workers: 1
+  epochs: 200
+
+CLASSIFIER_HYPERPARAMETERS:
+  hidden_dim: 16
+  depth: 2
+  num_heads: 8
+  aggregator: mean
+  learning_rate: 0.01
+  epochs: 200
+  printEvery: 10
+
+MISSINGNESS:
+  rates: [0.01, 0.03, 0.05, 0.2, 0.5, 0.8]
+  mechs: [MCAR, MAR, MNAR]
+
+MODELS:
+  EMBEDDING:
+    - Modularity
+    - Node2Vec
+    - DeepWalk
+    - VGAE
+    - DGI
+    # - GraFN
+    # - SGCL
+    - Random
+  CLASSIFIER:
+    - GCN
+    - GAT
+    - GraphSAGE
+    - MLP
+  
+DATASETS:
+  - Cora
+  - CiteSeer
+  # - PubMed
+  # - WikiCS
+  # - AmazonPhotos
