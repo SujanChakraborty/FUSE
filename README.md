@@ -100,12 +100,12 @@ After each iteration, $S$ is orthonormalized via QR decomposition to maintain st
 
 | Component | Cost |
 |---|---|
-| Modularity gradient ($AS$, degree correction) | $O(|E|k + nk)$ |
+| Modularity gradient ($AS$, degree correction) | $O(\|E\|k + nk)$ |
 | Supervised gradient | $O(nk)$ |
 | Random walks | $O(w \ell)$ |
 | Attention updates | $O(n d_{\max} k)$ |
 | QR orthonormalization | $O(nk^2)$ |
-| **Total (per iteration)** | **$O(|E|k + nk + nd_{\max}k + w\ell + nk^2)$** |
+| **Total (per iteration)** | **$O(\|E\|k + nk + nd_{\max}k + w\ell + nk^2)$** |
 
 This is substantially better than spectral methods requiring $O(n^3)$ eigendecomposition.
 
